@@ -78,6 +78,23 @@ def grep(lines, searchText):
             yield line
 
 
+'''
+作为生成器，因为每次迭代就会返回一个值，
+所以不能显示的在生成器函数中return 某个值，
+包括None值也不行，否则会抛出“SyntaxError”的异常，
+但是在函数中可以出现单独的return，表示结束该语句。
+'''
+def read_file(path):
+    size = 1024
+    with open(path, 'r') as f:
+        while True:
+            block = f.read(size)
+            if block:
+                yield block
+            else:
+                return
+
+
 
 
 if __name__ == '__main__':
