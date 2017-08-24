@@ -1,9 +1,10 @@
-#-*- utf-8 -*- 
+#-*- coding: utf-8 -*- 
 #!/usr/bin/python
 
 
 '''
 
+    
     Python的进程管理
 
 '''
@@ -29,5 +30,9 @@ if __name__ == "__main__":
     p = multiprocessing.Process(target = func, args=("hell", ))
     p.start()
     p.join()
+
+
+
+
 
 
